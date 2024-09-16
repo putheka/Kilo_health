@@ -10,14 +10,14 @@ class CreateAuthorsTable extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('bio')->nullable();
-            $table->string('profile_image')->nullable();
+            $table->text('bio');
+            $table->string('profile_image');
             $table->timestamps();
         });
     }
-    
+
     public function down()
-    {   
+    {
         Schema::dropIfExists('authors');
     }
 }

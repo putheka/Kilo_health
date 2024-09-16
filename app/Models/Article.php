@@ -10,14 +10,8 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'body',
-        'category_id',
-        'author_id',
-        'featured_image',
-        'published_at',
-        'views',
-        'likes'
+        'title', 'body', 'category_id', 'author_id', 'featured_image',
+        'read_time', 'status', 'published_at', 'views', 'likes'
     ];
 
     public function category()
@@ -33,5 +27,10 @@ class Article extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'article_tag');
+    }
+
+    public function media()
+    {
+        return $this->hasMany(UploadMedia::class);
     }
 }

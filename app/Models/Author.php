@@ -9,7 +9,7 @@ class Author extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'bio', 'image'];
+    protected $fillable = ['name', 'bio', 'profile_image'];
 
     public function articles()
     {

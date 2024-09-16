@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class UploadMedia extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['file_path', 'mime_type', 'article_id'];
+
+    public function article()
+    {
+        return $this->belongsTo(Article::class);
+    }
 }
